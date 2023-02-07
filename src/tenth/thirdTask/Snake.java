@@ -7,7 +7,7 @@ public class Snake {
         boolean direction = true;
 
         if(col <= 0 || n <= 0){
-            System.out.println("Аргументы должны быть больше нуляа");
+            System.out.println("Аргументы должны быть больше нуля");
             return;
         }
 

@@ -8,7 +8,7 @@ public class Main {
         int allMinutes = 0;
 
         if(m <= 0 || n <= 0){
-            System.out.println("Аргументы должны быть больше нуляа");
+            System.out.println("Аргументы должны быть больше нуля");
             return;
         }
 
