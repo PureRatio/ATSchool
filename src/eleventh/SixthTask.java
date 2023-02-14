@@ -3,49 +3,64 @@ package eleventh;
 public class SixthTask {
     public static void main(String[] args) {
         String str = args[0];
-        System.out.println(toInt(str));
+
+        if(isInteger(str)) {
+            long x = toInt(str) * 2L;
+            System.out.println(x);
+        } else {
+            System.out.println("Не является нормальным целым числом");
+        }
     }
 
-    static int toInt(String str){
-        long result = 0;
-        boolean wasMinus = false;
-        boolean error = false;
-        int digitCount = 0;
-        int maxDigitCount = (Integer.MAX_VALUE + "").length();
+    static boolean isInteger(String str) {
+        boolean minusNotAlowed = false;
+        boolean isPositive = true;
 
-        for(int i = str.length()-1; i >= 0 ; i--){
+        for(int i = 0; i < str.length() ; i++) {
             char temp = str.charAt(i);
             if(Character.isDigit(temp)) {
-                if(wasMinus) {
-                    error = true;
-                    break;
-                }
-
-                result += (temp - '0') * Math.pow(10, str.length() - 1 - i);
-                digitCount++;
-
-                if(digitCount > maxDigitCount) {
-                    error = true;
-                    break;
-                }
+                minusNotAlowed = true;
             } else {
+                if(minusNotAlowed) {
+                    return false;
+                }
                 if(temp == '-') {
-                    result *= -1;
-                    wasMinus = true;
+                    minusNotAlowed = true;
+                    isPositive = !isPositive;
                 } else {
-                    error = true;
-                    break;
+                    return false;
                 }
             }
         }
 
-        if(result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) {
-            error = true;
+        String maxInt = (isPositive ? Integer.MAX_VALUE : Integer.MIN_VALUE) + "";
+
+        if(str.length() > maxInt.length()) return false;
+        if(str.length() < maxInt.length()) return true;
+
+        if(str.length() == maxInt.length()) {
+            for(int i = 0; i < str.length(); i++){
+                if(str.charAt(i) > maxInt.charAt(i)) {
+                    return false;
+                }
+            }
         }
 
-        if(error)
-            System.out.println("Pidrila detected");
+        return true;
+    }
 
-        return (int)result;
+    static int toInt(String str){
+        int result = 0;
+        int x = str.charAt(0) != '-' ? 1 : -1;
+
+
+        for(int i = str.length()-1; i >= 0 ; i--){
+            char temp = str.charAt(i);
+            if(Character.isDigit(temp)) {
+                result += (temp - '0') * Math.pow(10, str.length() - 1 - i) * x;
+            }
+        }
+
+        return result;
     }
 }
