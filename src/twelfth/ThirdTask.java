@@ -13,7 +13,7 @@ public class ThirdTask {
         for(int num : array)
             System.out.printf("%d ",num);
     }
-    static void bubbleSort(int[] array){
+    public static void bubbleSort(int[] array){
         for (int i = 0; i < array.length - 1; i++) {
             for(int j = 0; j < array.length - 1; j++) {
                 if(array[j + 1] < array[j]) {
