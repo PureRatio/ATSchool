@@ -1,6 +1,5 @@
 package thirteenth.secondTask.com.fruitbase;
 
-import thirteenth.secondTask.com.fruitbase.FruitCatalogue;
 import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
 
 public class FruitBase {
@@ -25,6 +24,7 @@ public class FruitBase {
         FruitBase fruitBase = new FruitBase();
 
         if(args.length == 0){
+            System.out.println("Нет аргументов");
             return;
         }
 
