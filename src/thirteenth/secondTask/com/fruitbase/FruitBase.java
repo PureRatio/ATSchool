@@ -19,16 +19,4 @@ public class FruitBase {
         }
         return cargo;
     }
-
-    public static void main(String[] args) {
-        FruitBase fruitBase = new FruitBase();
-
-        if(args.length == 0){
-            System.out.println("Нет аргументов");
-            return;
-        }
-
-        Cargo cargo = fruitBase.takeOrder(args);
-        System.out.println("Общий вес груза: " + cargo.getWeight() + " " + "Общая цена груза: " + cargo.getPrice());
-    }
 }

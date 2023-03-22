@@ -3,13 +3,13 @@ package thirteenth.secondTask.com.fruitbase;
 import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Cargo {
-    Fruit[] fruits;
+    ArrayList<Fruit> fruits;
 
     Cargo(){
-        fruits = new Fruit[0];
+        fruits = new ArrayList<Fruit>();
     }
 
     public double getWeight(){
@@ -28,8 +28,19 @@ public class Cargo {
         return price;
     }
 
+    public ArrayList<Fruit> getFruits() {
+        return fruits;
+    }
+
+    public Fruit removeFruit(Fruit fruit){
+        if(fruits.contains(fruit)) {
+            fruits.remove(fruit);
+            return fruit;
+        }
+        return null;
+    }
+
     void addFruit(Fruit fruit){
-        fruits = Arrays.copyOf(fruits, fruits.length+1);
-        fruits[fruits.length-1] = fruit;
+        fruits.add(fruit);
     }
 }
