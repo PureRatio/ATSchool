@@ -3,12 +3,6 @@ package thirteenth.secondTask.com.fruitbase.fruits;
 import java.math.BigDecimal;
 
 public abstract class Fruit {
-    public enum Freshness {
-        FRESH,
-        OVERRIPED,
-        SPOILED
-    }
-
     protected double weight;
     protected BigDecimal price;
     protected String name;

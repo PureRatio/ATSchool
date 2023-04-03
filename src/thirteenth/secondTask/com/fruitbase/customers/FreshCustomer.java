@@ -1,6 +1,7 @@
 package thirteenth.secondTask.com.fruitbase.customers;
 
 import thirteenth.secondTask.com.fruitbase.Cargo;
+import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
 
 public class FreshCustomer extends Customer {
 
@@ -10,9 +11,12 @@ public class FreshCustomer extends Customer {
 
     @Override
     public void takeFruits(Cargo cargo) {
-        for(var fruit : cargo.getFruits()){
-            if(fruit.isFresh())
-                purchases.add(cargo.removeFruit(fruit));
+        for(Fruit fruit : cargo.getFruits()){
+            if(fruit.isFresh()) {
+                Fruit temp = cargo.removeFruit(fruit);
+                if (temp != null)
+                    purchases.add(cargo.removeFruit(fruit));
+            }
         }
     }
 }

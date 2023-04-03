@@ -4,9 +4,10 @@ import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cargo {
-    ArrayList<Fruit> fruits;
+    List<Fruit> fruits;
 
     Cargo(){
         fruits = new ArrayList<Fruit>();
@@ -28,7 +29,7 @@ public class Cargo {
         return price;
     }
 
-    public ArrayList<Fruit> getFruits() {
+    public List<Fruit> getFruits() {
         return fruits;
     }
 

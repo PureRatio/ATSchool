@@ -1,6 +1,7 @@
 package thirteenth.secondTask.com.fruitbase.customers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import thirteenth.secondTask.com.fruitbase.Cargo;
 import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
@@ -8,7 +9,7 @@ import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
 public abstract class Customer {
 
     protected String name;
-    protected ArrayList<Fruit> purchases;
+    protected List<Fruit> purchases;
 
     Customer(String name) {
         this.name = name;
@@ -19,11 +20,15 @@ public abstract class Customer {
 
     @Override
     public String toString() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
+        result.append("Customer ");
+        result.append(name);
+        result.append(" purchase: ");
+        result.append(result);
         for(int i = 0; i <purchases.size(); i++) {
-            result += purchases.get(i).getName();
-            if(i < purchases.size() - 1) result += ", ";
+            result.append(purchases.get(i).getName());
+            if(i < purchases.size() - 1) result.append(", ");
         }
-        return "Customer " + name + " purchase: " + result;
+        return result.toString();
     }
 }

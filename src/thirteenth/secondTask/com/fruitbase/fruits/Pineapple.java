@@ -7,5 +7,6 @@ public class Pineapple extends Fruit{
         this.weight = 1D;
         this.price = new BigDecimal(300);
         this.name = "Pineapple";
+        this.freshness = Freshness.FRESH;
     }
 }

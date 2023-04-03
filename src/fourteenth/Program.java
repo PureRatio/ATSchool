@@ -1,6 +1,8 @@
 package fourteenth;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
 
 public class Program {
     public static void main(String[] args) {
@@ -8,13 +10,15 @@ public class Program {
             System.out.println("0 argumentov");
             return;
         }
-        printArray(args);
+        Program obj = new Program();
+
+        obj.printArray(args);
         System.out.println();
-        printArray(findDistinction(args));
+        obj.printArray(obj.findDistinction(args));
     }
 
-    public static String[] findDistinction(String[] args){
-        ArrayList<String> arr = new ArrayList<String>();
+    public String[] findDistinction(String[] args){
+        List<String> arr = new ArrayList<String>();
         for (String str1 : args){
             if(!arr.contains(str1))
                 arr.add(str1);
@@ -24,9 +28,11 @@ public class Program {
         return arr.toArray(result);
     }
 
-    public static void printArray(String[] strs) {
+    public void printArray(String[] strs) {
+        StringJoiner sj = new StringJoiner(" ");
         for(var str : strs) {
-            System.out.print(str + " ");
+            sj.add(str);
         }
+        System.out.print(sj.toString());
     }
 }

@@ -7,5 +7,6 @@ public class Orange extends Fruit{
         this.weight = 0.2D;
         this.price = new BigDecimal(40);
         this.name = "Orange";
+        this.freshness = Freshness.FRESH;
     }
 }
