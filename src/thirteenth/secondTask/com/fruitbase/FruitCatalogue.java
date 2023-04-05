@@ -2,7 +2,9 @@ package thirteenth.secondTask.com.fruitbase;
 
 import thirteenth.secondTask.com.fruitbase.fruits.*;
 
-public class FruitCatalogue {
+import java.io.Serializable;
+
+public class FruitCatalogue implements Serializable {
     private Fruit[] fruits;
 
     FruitCatalogue(){

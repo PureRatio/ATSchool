@@ -14,6 +14,15 @@ public class Simulation {
 
         FruitBase fruitBase = new FruitBase();
 
+        for (String arg : args){
+            if (arg.equals("-e") || arg.equals("--export")){
+                fruitBase.exportCatalogue();
+            }
+            if (arg.equals("-i") || arg.equals("--import")){
+                fruitBase.importCatalogue();
+            }
+        }
+
         for(Customer customer : customers) {
             Cargo cargo = fruitBase.takeOrder(args);
             System.out.println("Общий вес груза: " + cargo.getWeight() + " Общая цена груза: " + cargo.getPrice());

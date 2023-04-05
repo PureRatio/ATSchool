@@ -1,8 +1,9 @@
 package thirteenth.secondTask.com.fruitbase.fruits;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public abstract class Fruit {
+public abstract class Fruit implements Serializable {
     protected double weight;
     protected BigDecimal price;
     protected String name;
