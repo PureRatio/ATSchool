@@ -15,7 +15,7 @@ public class FreshCustomer extends Customer {
             if(fruit.isFresh()) {
                 Fruit temp = cargo.removeFruit(fruit);
                 if (temp != null)
-                    purchases.add(cargo.removeFruit(fruit));
+                    purchases.add(temp);
             }
         }
     }

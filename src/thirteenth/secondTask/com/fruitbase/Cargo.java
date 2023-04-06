@@ -30,7 +30,7 @@ public class Cargo {
     }
 
     public List<Fruit> getFruits() {
-        return fruits;
+        return new ArrayList<Fruit>(fruits);
     }
 
     public Fruit removeFruit(Fruit fruit){
