@@ -44,8 +44,8 @@ public abstract class Fruit implements Serializable {
         
         Fruit f = (Fruit) o;
 
-        return Objects.equals(this.freshness, f.freshness) &&
-                Objects.equals(this.weight, f.weight) &&
+        return this.freshness == f.freshness &&
+                this.weight == f.weight &&
                 Objects.equals(this.price, f.price) &&
                 Objects.equals(this.name, f.name);
     }
