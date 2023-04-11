@@ -8,7 +8,7 @@ import thirteenth.secondTask.com.fruitbase.customers.UniqueCustomer;
 
 public class Simulation {
     public static void main(String[] args) {
-        ArrayList<Customer> customers = new ArrayList<Customer>();
+        ArrayList<Customer> customers = new ArrayList<>();
         customers.add(new FreshCustomer("Oleg"));
         customers.add(new UniqueCustomer("Vasiliy"));
 

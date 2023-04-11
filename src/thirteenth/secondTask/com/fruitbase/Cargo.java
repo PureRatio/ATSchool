@@ -10,7 +10,7 @@ public class Cargo {
     List<Fruit> fruits;
 
     Cargo(){
-        fruits = new ArrayList<Fruit>();
+        fruits = new ArrayList<>();
     }
 
     public double getWeight(){
@@ -30,7 +30,7 @@ public class Cargo {
     }
 
     public List<Fruit> getFruits() {
-        return new ArrayList<Fruit>(fruits);
+        return new ArrayList<>(fruits);
     }
 
     public Fruit removeFruit(Fruit fruit){

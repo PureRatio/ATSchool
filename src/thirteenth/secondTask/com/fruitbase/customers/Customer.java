@@ -13,7 +13,7 @@ public abstract class Customer {
 
     Customer(String name) {
         this.name = name;
-        purchases = new ArrayList<Fruit>();
+        purchases = new ArrayList<>();
     }
     
     public abstract void takeFruits(Cargo cargo);
@@ -21,10 +21,10 @@ public abstract class Customer {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append("Customer ");
-        result.append(name);
-        result.append(" purchase: ");
-        result.append(result);
+        result.append("Customer ")
+                .append(name)
+                .append(" purchase: ")
+                .append(result);
         for(int i = 0; i <purchases.size(); i++) {
             result.append(purchases.get(i).getName());
             if(i < purchases.size() - 1) result.append(", ");

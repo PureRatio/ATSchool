@@ -20,7 +20,7 @@ public class UniqueCustomer extends Customer {
     }
 
     private List<Fruit> findDistinction(List<Fruit> args){
-        List<Fruit> arr = new ArrayList<Fruit>();
+        List<Fruit> arr = new ArrayList<>();
         for (Fruit x : args){
             if(!arr.contains(x))
                 arr.add(x);

@@ -2,6 +2,7 @@ package thirteenth.secondTask.com.fruitbase.fruits;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public abstract class Fruit implements Serializable {
     protected double weight;
@@ -43,10 +44,10 @@ public abstract class Fruit implements Serializable {
         
         Fruit f = (Fruit) o;
 
-        return this.freshness == f.freshness &&
-        this.weight == f.weight &&
-        this.price == f.price &&
-        this.name == f.name;
+        return Objects.equals(this.freshness, f.freshness) &&
+                Objects.equals(this.weight, f.weight) &&
+                Objects.equals(this.price, f.price) &&
+                Objects.equals(this.name, f.name);
     }
 
     public boolean isFresh() {
