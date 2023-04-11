@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import thirteenth.secondTask.com.fruitbase.Cargo;
+import thirteenth.secondTask.com.fruitbase.Delivery;
 import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
 
 public abstract class Customer {
@@ -16,7 +17,7 @@ public abstract class Customer {
         purchases = new ArrayList<>();
     }
     
-    public abstract void takeFruits(Cargo cargo);
+    public abstract void takeFruits(Delivery cargo);
 
     @Override
     public String toString() {

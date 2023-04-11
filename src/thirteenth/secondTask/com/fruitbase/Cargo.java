@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cargo {
+public class Cargo implements Delivery{
     List<Fruit> fruits;
 
     Cargo(){
@@ -29,8 +29,8 @@ public class Cargo {
         return price;
     }
 
-    public List<Fruit> getFruits() {
-        return new ArrayList<>(fruits);
+    public Fruit[] getFruits() {
+        return fruits.toArray(new Fruit[0]);
     }
 
     public Fruit removeFruit(Fruit fruit){
@@ -41,7 +41,7 @@ public class Cargo {
         return null;
     }
 
-    void addFruit(Fruit fruit){
+    public void addFruit(Fruit fruit){
         fruits.add(fruit);
     }
 }

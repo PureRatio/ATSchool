@@ -10,9 +10,9 @@ public class FruitBase{
         this.fruitCatalogue = new FruitCatalogue();
     }
 
-    public Cargo takeOrder(String[] order){
+    public Delivery takeOrder(String[] order){
         Fruit fruit;
-        Cargo cargo = new Cargo();
+        Delivery cargo = new Cargo();
         for (String fruitName : order){
             fruit = fruitCatalogue.findFruit(fruitName);
             if(fruit != null){

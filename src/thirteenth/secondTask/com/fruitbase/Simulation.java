@@ -24,7 +24,7 @@ public class Simulation {
         }
 
         for(Customer customer : customers) {
-            Cargo cargo = fruitBase.takeOrder(args);
+            Delivery cargo = fruitBase.takeOrder(args);
             System.out.println("Общий вес груза: " + cargo.getWeight() + " Общая цена груза: " + cargo.getPrice());
             customer.takeFruits(cargo);
             System.out.println(customer);
