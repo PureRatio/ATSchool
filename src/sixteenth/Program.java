@@ -24,24 +24,26 @@ public class Program {
         }
 
         Program program = new Program();
+        Function function;
         program.printArray(array);
         switch (args[0]){
             case "Half":
-                array = program.applyFunction(array, new Half());
+                function = new Half();
                 break;
             case "Double":
-                array = program.applyFunction(array, new Double());
+                function = new Double();
                 break;
             case "Exact":
-                array = program.applyFunction(array, new Exact());
+                function = new Exact();
                 break;
             case "Square":
-                array = program.applyFunction(array, new Square());
+                function = new Square();
                 break;
             default:
                 System.out.printf("Операция %s не поддерживается\n", args[0]);
                 return;
         }
+        array = program.applyFunction(array, function);
         program.printArray(array);
     }
 
