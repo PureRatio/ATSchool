@@ -22,8 +22,8 @@ public class FruitBase{
         return cargo;
     }
 
-    public void exportCatalogue(){
-        try(FileOutputStream outputStream = new FileOutputStream("src\\thirteenth\\secondTask\\com\\fruitbase\\fruitCatalogue.ser")){
+    public void exportCatalogue(String path){
+        try(FileOutputStream outputStream = new FileOutputStream(path)){
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
             objectOutputStream.writeObject(fruitCatalogue);
             objectOutputStream.close();
@@ -34,8 +34,8 @@ public class FruitBase{
         }
     }
 
-    public void importCatalogue(){
-        try(FileInputStream fileInputStream = new FileInputStream("src\\thirteenth\\secondTask\\com\\fruitbase\\fruitCatalogue.ser")){
+    public void importCatalogue(String path){
+        try(FileInputStream fileInputStream = new FileInputStream(path)){
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             fruitCatalogue = (FruitCatalogue) objectInputStream.readObject();
             System.out.println("каталог импортирован");

@@ -1,11 +1,13 @@
 package fifteenth;
 
+import java.util.NoSuchElementException;
+
 public class NatureElement {
     public NatureElement connect(NatureElement other) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
-    public static NatureElement Create(String name) {
+    public static NatureElement create(String name) {
         switch(name) {
             case "Fire":
                 return new Fire();
@@ -16,7 +18,7 @@ public class NatureElement {
             case "Water":
                 return new Water();
             default:
-                return null;
+                throw new NoSuchElementException();
         }
     }
 }

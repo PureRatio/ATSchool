@@ -15,6 +15,9 @@ public class Water extends NatureElement {
         if(other instanceof Earth) {
             return new Mud();
         }
-        return null;
+        if(other instanceof Energy) {
+            return new Steam();
+        }
+        throw new UnsupportedOperationException();
     }
 }

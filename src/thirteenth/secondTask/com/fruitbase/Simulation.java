@@ -13,13 +13,14 @@ public class Simulation {
         customers.add(new UniqueCustomer("Vasiliy"));
 
         FruitBase fruitBase = new FruitBase();
+        Simulation simulation = new Simulation();
 
-        for (String arg : args){
-            if (arg.equals("-e") || arg.equals("--export")){
-                fruitBase.exportCatalogue();
+        for (int i = 0; i < args.length; i++){
+            if (args[i].equals("-e") || args[i].equals("--export")){
+                fruitBase.exportCatalogue(simulation.findPath(args, i));
             }
-            if (arg.equals("-i") || arg.equals("--import")){
-                fruitBase.importCatalogue();
+            if (args[i].equals("-i") || args[i].equals("--import")){
+                fruitBase.importCatalogue(simulation.findPath(args, i));
             }
         }
 
@@ -31,5 +32,14 @@ public class Simulation {
             System.out.println("Общий вес груза: " + cargo.getWeight() + " Общая цена груза: " + cargo.getPrice());
             System.out.println();
         }
+    }
+    public String findPath(String[] arr, int index){
+        if (index + 2 >= arr.length){
+            return null;
+        }
+        if (arr[index + 1].equals("=")){
+            return arr[index + 2];
+        }
+        return null;
     }
 }

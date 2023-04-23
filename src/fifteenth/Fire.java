@@ -15,6 +15,6 @@ public class Fire extends NatureElement {
         if(other instanceof Earth) {
             return new Lava();
         }
-        return null;
+        throw new UnsupportedOperationException();
     }
 }

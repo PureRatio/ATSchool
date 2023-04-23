@@ -15,6 +15,6 @@ public class Air extends NatureElement {
         if(other instanceof Earth) {
             return new Dust();
         }
-        return null;
+        throw new UnsupportedOperationException();
     }
 }

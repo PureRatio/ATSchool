@@ -15,6 +15,6 @@ public class Earth extends NatureElement {
         if(other instanceof Earth) {
             return new Pressure();
         }
-        return null;
+        throw new UnsupportedOperationException();
     }
 }
