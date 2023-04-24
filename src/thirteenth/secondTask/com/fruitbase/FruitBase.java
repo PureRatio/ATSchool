@@ -22,26 +22,18 @@ public class FruitBase{
         return cargo;
     }
 
-    public void exportCatalogue(String path){
-        try(FileOutputStream outputStream = new FileOutputStream(path)){
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-            objectOutputStream.writeObject(fruitCatalogue);
-            objectOutputStream.close();
-            System.out.println("каталог экспортирован");
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
+    public void exportCatalogue(String path) throws IOException {
+        FileOutputStream outputStream = new FileOutputStream(path);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+        objectOutputStream.writeObject(fruitCatalogue);
+        objectOutputStream.close();
+        System.out.println("каталог экспортирован");
     }
 
-    public void importCatalogue(String path){
-        try(FileInputStream fileInputStream = new FileInputStream(path)){
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            fruitCatalogue = (FruitCatalogue) objectInputStream.readObject();
-            System.out.println("каталог импортирован");
-        }
-        catch (IOException | ClassNotFoundException e){
-            e.printStackTrace();
-        }
+    public void importCatalogue(String path) throws IOException, ClassNotFoundException {
+        FileInputStream fileInputStream = new FileInputStream(path);
+        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+        fruitCatalogue = (FruitCatalogue) objectInputStream.readObject();
+        System.out.println("каталог импортирован");
     }
 }
