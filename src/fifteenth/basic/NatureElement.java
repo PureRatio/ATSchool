@@ -1,4 +1,4 @@
-package fifteenth;
+package fifteenth.basic;
 
 import java.util.NoSuchElementException;
 

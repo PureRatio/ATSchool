@@ -1,5 +1,7 @@
 package fifteenth;
 
+import fifteenth.basic.NatureElement;
+
 import java.util.NoSuchElementException;
 
 public class Alchemy {
@@ -24,7 +26,7 @@ public class Alchemy {
             NatureElement result;
             try {
                 result = elem1.connect(elem2);
-                System.out.println(result.getClass().getName());
+                System.out.println(result.getClass().getSimpleName());
             }
             catch (UnsupportedOperationException e){
                 System.out.printf("Не складываются элементы %s и %s", args[i], args[i+1]);
