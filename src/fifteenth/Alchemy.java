@@ -1,5 +1,7 @@
 package fifteenth;
 
+import fifteenth.basic.NatureElement;
+
 public class Alchemy {
     public static void main(String[] args) {
         for(int i = 0; i + 1 < args.length; i += 2) {
@@ -18,7 +20,7 @@ public class Alchemy {
                 System.out.printf("Не складываются элементы %s и %s", args[i], args[i+1]);
                 return;
             }
-            System.out.println(result.getClass().getName());
+            System.out.println(result.getClass().getSimpleName());
         }
     }
 }

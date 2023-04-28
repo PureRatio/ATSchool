@@ -1,4 +1,4 @@
-package fifteenth;
+package fifteenth.basic;
 
 public class NatureElement {
     public NatureElement connect(NatureElement other) {
@@ -12,7 +12,7 @@ public class NatureElement {
             case "Air":
                 return new Air();
             case "Earth":
-                return new Earth();   
+                return new Earth();
             case "Water":
                 return new Water();
             default:

@@ -23,7 +23,7 @@ public class FruitBase{
     }
 
     public void exportCatalogue(){
-        try(FileOutputStream outputStream = new FileOutputStream("src\\thirteenth\\secondTask\\com\\fruitbase\\fruitCatalogue.ser")){
+        try(FileOutputStream outputStream = new FileOutputStream("fruitCatalogue.ser")){
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
             objectOutputStream.writeObject(fruitCatalogue);
             objectOutputStream.close();
@@ -35,7 +35,7 @@ public class FruitBase{
     }
 
     public void importCatalogue(){
-        try(FileInputStream fileInputStream = new FileInputStream("src\\thirteenth\\secondTask\\com\\fruitbase\\fruitCatalogue.ser")){
+        try(FileInputStream fileInputStream = new FileInputStream("fruitCatalogue.ser")){
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             fruitCatalogue = (FruitCatalogue) objectInputStream.readObject();
             System.out.println("каталог импортирован");
