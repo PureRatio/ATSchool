@@ -10,6 +10,13 @@ public abstract class Fruit implements Serializable {
     protected String name;
     protected Freshness freshness;
 
+    public Fruit(double weight, BigDecimal price, String name, Freshness freshness){
+        this.weight = weight;
+        this.price = price;
+        this.name = name;
+        this.freshness = freshness;
+    }
+
     public double getWeight(){
         return weight;
     }

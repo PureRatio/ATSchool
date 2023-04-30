@@ -12,7 +12,7 @@ public abstract class Customer {
     protected String name;
     protected List<Fruit> purchases;
 
-    Customer(String name) {
+    public Customer(String name) {
         this.name = name;
         purchases = new ArrayList<>();
     }

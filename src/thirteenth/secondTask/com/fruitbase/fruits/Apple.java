@@ -4,9 +4,6 @@ import java.math.BigDecimal;
 
 public class Apple extends Fruit{
     public Apple(){
-        this.weight = 0.2D;
-        this.price = new BigDecimal(25);
-        this.name = "Apple";
-        this.freshness = Freshness.FRESH;
+        super(0.2D, new BigDecimal(25), "Apple", Freshness.FRESH);
     }
 }
