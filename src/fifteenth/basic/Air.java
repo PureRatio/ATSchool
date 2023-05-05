@@ -8,15 +8,14 @@ import fifteenth.derived.Rain;
 public class Air extends NatureElement {
     @Override
     public NatureElement connect(NatureElement other) {
-        NatureElement result = null;
-        if (other instanceof Fire) result = new Energy();
-        if (other instanceof Air) result = new Pressure();
-        if (other instanceof Water) result = new Rain();
-        if (other instanceof Earth) result = new Dust();
+        NatureElement result;
 
-        if (result == null) {
-            throw new UnsupportedOperationException();
-        }
+        if (other instanceof Fire) result = new Energy();
+        else if (other instanceof Air) result = new Pressure();
+        else if (other instanceof Water) result = new Rain();
+        else if (other instanceof Earth) result = new Dust();
+        else throw new UnsupportedOperationException();
+
         System.out.printf("%s + %s = %s \n", this.getClass().getSimpleName(), other.getClass().getSimpleName(), result.getClass().getSimpleName());
         return result;
     }

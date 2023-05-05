@@ -22,6 +22,9 @@ public class Simulation {
                 String path = simulation.findPath(args, i);
                 try {
                     fruitBase.exportCatalogue(path);
+                } catch (FileNotFoundException e) {
+                    System.out.println("Не найден файл");
+                    return;
                 } catch (IOException e) {
                     System.out.println("Ошибка при экспорте каталога в " + path);
                     return;
