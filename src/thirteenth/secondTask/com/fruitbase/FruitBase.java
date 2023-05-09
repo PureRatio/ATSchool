@@ -3,6 +3,8 @@ package thirteenth.secondTask.com.fruitbase;
 import thirteenth.secondTask.com.fruitbase.fruits.Fruit;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class FruitBase{
     private FruitCatalogue fruitCatalogue;
@@ -23,6 +25,9 @@ public class FruitBase{
     }
 
     public void exportCatalogue(String path) throws IOException {
+        if (Files.notExists(Paths.get(path))) {
+            throw new FileNotFoundException();
+        }
         FileOutputStream outputStream = new FileOutputStream(path);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
         objectOutputStream.writeObject(fruitCatalogue);
