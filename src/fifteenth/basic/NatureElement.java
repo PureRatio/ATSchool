@@ -1,5 +1,7 @@
 package fifteenth.basic;
 
+import fifteenth.derived.Energy;
+
 import java.util.NoSuchElementException;
 
 public class NatureElement {
@@ -17,6 +19,8 @@ public class NatureElement {
                 return new Earth();   
             case "Water":
                 return new Water();
+            case "Energy":
+                return new Energy();
             default:
                 throw new NoSuchElementException();
         }

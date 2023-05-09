@@ -5,16 +5,15 @@ import fifteenth.derived.*;
 public class Water extends NatureElement {
     @Override
     public NatureElement connect(NatureElement other) {
-        NatureElement result = null;
-        if(other instanceof Fire) result = new Steam();
-        if(other instanceof Air) result = new Rain();
-        if(other instanceof Water) result = new Sea();
-        if(other instanceof Earth) result = new Mud();
-        if(other instanceof Energy) result = new Steam();
+        NatureElement result;
 
-        if (result == null) {
-            throw new UnsupportedOperationException();
-        }
+        if(other instanceof Fire) result = new Steam();
+        else if(other instanceof Air) result = new Rain();
+        else if(other instanceof Water) result = new Sea();
+        else if(other instanceof Earth) result = new Mud();
+        else if(other instanceof Energy) result = new Steam();
+        else throw new UnsupportedOperationException();
+
         System.out.printf("%s + %s = %s \n", this.getClass().getSimpleName(), other.getClass().getSimpleName(), result.getClass().getSimpleName());
         return result;
     }
