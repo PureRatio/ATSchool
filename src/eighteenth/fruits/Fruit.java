@@ -1,4 +1,6 @@
 package eighteenth.fruits;
 
-public interface Fruit {
+import eighteenth.Plant;
+
+public interface Fruit extends Plant {
 }
