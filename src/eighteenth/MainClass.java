@@ -3,28 +3,23 @@ package eighteenth;
 import eighteenth.vegetables.*;
 import eighteenth.fruits.*;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainClass {
     public static void main(String[] args) {
-        Fruit kletchatka1 = new Banana();
-        Vegetable kletchatka2 = new Cucumber();
+        ArrayList <Plant> plants = new ArrayList <> ();
+        HashMap <String, Plant> hashMapPlants = new HashMap <> ();
 
-        Basket<Vegetable> vegetableBasket = new Basket<>();
-        Basket<Fruit> fruitBasket = new Basket<>();
+        plants.add(new Banana());
+        plants.add(new Apple());
+        plants.add(new Cucumber());
+        plants.add(new Tomato());
 
-        fruitBasket.addItem(kletchatka1);
-        vegetableBasket.addItem(kletchatka2);
-        MainClass mc = new MainClass();
-        mc.makeSalad(fruitBasket.getIterator());
-        mc.makeSalad(vegetableBasket.getIterator());
-    }
-
-    public <T> void makeSalad(Iterator<T> plantIterator){
-        System.out.print("Готовим салатик: ");
-        while (plantIterator.hasNext()){
-            System.out.print(plantIterator.next().getClass().getSimpleName() + " ");
+        for(Plant plant: plants){
+            hashMapPlants.put(plant.getName(), plant);
         }
-        System.out.println("\nУгощайся!");
+
+        hashMapPlants.forEach((key, value) -> System.out.println(key + " " + value.getClass().getSimpleName()));
     }
 }
