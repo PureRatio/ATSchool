@@ -16,9 +16,7 @@ public class MainClass {
         plants.add(new Cucumber());
         plants.add(new Tomato());
 
-        for(Plant plant: plants){
-            hashMapPlants.put(plant.getName(), plant);
-        }
+        plants.forEach(plant -> hashMapPlants.put(plant.getName(), plant));
 
         hashMapPlants.forEach((key, value) -> System.out.println(key + " " + value.getClass().getSimpleName()));
     }
