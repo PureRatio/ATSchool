@@ -1,16 +1,15 @@
 package eighteenth;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Basket <T>{
-    private List<T> arr;
+    private Object[] arr;
+    int i;
 
-    public Basket(){
-        this.arr = new ArrayList<>();
+    public Basket(int capacity){
+        arr = new Object[capacity];
     }
 
     public void addItem(T item){
-        arr.add(item);
+        arr[i] = item;
+        i++;
     }
 }
