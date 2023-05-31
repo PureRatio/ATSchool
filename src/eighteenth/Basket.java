@@ -11,10 +11,16 @@ public class Basket <T>{
     }
 
     public void addItem(T item){
-        arr.put(item, null);
+        if(!arr.containsKey(item)) {
+            arr.put(item, null);
+        }
     }
 
     public Iterator<T> getIterator(){
         return arr.keySet().iterator();
+    }
+    
+    public int size() {
+        return arr.size();
     }
 }
